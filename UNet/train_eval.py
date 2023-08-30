@@ -3,7 +3,7 @@ import wandb
 from data_loader import get_data_loaders
 from UNet import UNet
 from losses import CustomLoss
-import optimizer import get_optimizer
+from optimizer import get_optimizer
 
 def train(model, train_loader, criterion, optimizer, device, epoch, log_interval=1):
     model.train()
@@ -16,8 +16,8 @@ def train(model, train_loader, criterion, optimizer, device, epoch, log_interval
         optimizer.step()
         
         if batch_idx % log_interval == 0:
-            print(f"Epoch [{(epoch+1)/{epochs}}] - Batch [{batch_idx}/{len(train_loader)}] - Loss: {loss.item():.4f}")
-            wandb.log({"train_loss": loss.item()})
+            print(f"Epoch [{epoch+1}/{epochs}] - Batch [{batch_idx}/{len(train_loader)}] - Loss: {loss.item():.4f}")
+            wandb.log({"epoch": epoch+1, "batch_idx": batch_idx, "train_loss": loss.item()})
 
 
 def main():
