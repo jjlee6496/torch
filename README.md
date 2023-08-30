@@ -8,4 +8,4 @@
 # Projects
 
 ## Project 1
-* [UNet을 통한 PennFudanPed 데이터셋 Instance Segmentation](https://github.com/jjlee6496/torch/tree/main/UNet)
+* [UNet을 통한 PennFudanPed 데이터셋 Instance Segmentation](https://github.com/jjlee6496/torch/tree/main/PennFudanPed)

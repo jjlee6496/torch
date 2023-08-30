@@ -40,6 +40,9 @@ def main():
     # Initialize wandb
     wandb.init(project='project1', config={"batch_size": batch_size, "learning_rate": learning_rate})
     
+    # Log model's architecture
+    wandb.watch(model)
+    
     for epoch in range(epochs):
         train(model, train_loader, criterion, optimizer, device, epoch, log_interval)
     
